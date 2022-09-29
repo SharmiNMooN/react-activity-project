@@ -1,11 +1,18 @@
 import Content from "../Content/Content";
 import studyData from "../../fakeData/fakeStudyData";
-const Home = () => {
+const Home = ({ setStudyTime }) => {
+  const handleStudyTime = (time) => {
+    setStudyTime(time);
+  };
   return (
     <div className="container">
       <div className="row">
         {studyData.map((data) => (
-          <Content key={data.id} data={data}></Content>
+          <Content
+            key={data.id}
+            handleStudyTime={handleStudyTime}
+            data={data}
+          ></Content>
         ))}
       </div>
     </div>

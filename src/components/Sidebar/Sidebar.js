@@ -1,13 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../images/logo.jpeg";
 import BreakTime from "../BreakTime/BreakTime";
 
 const Sidebar = (props) => {
+  console.log(`props--`, props);
   const _breakTime = [10, 20, 30, 40, 50];
-
-  const { studyTime } = props;
-
   const [breakTime, setBreakTime] = useState(0);
+  let StudyTime = 0;
+
+  const _studyTime = localStorage.getItem("studyTime");
+  console.log(_studyTime);
+  if (!_studyTime) {
+    localStorage.setItem("studyTime", props.studyTime);
+    StudyTime = props.studyTime;
+  } else {
+    localStorage.setItem("studyTime", Number(_studyTime) + props.studyTime);
+    StudyTime = Number(_studyTime) + props.studyTime;
+  }
 
   const handleBreakTime = (time) => {
     setBreakTime(time);
@@ -58,7 +67,7 @@ const Sidebar = (props) => {
         <div className="row bg-info rounded">
           <div className="col-12 row">
             <div className="col-6">Study time:</div>
-            <div className="col-6 text-muted">200 minutes</div>
+            <div className="col-6 text-muted">{StudyTime} minutes</div>
           </div>
           <div className="col-12 row">
             <div className="col-6">Break time:</div>
