@@ -15,7 +15,7 @@ const Sidebar = (props) => {
           </div>
         </div>
       </div>
-      <div className="row bg-secondary rounded text-white">
+      <div className="row bg-info rounded text-white">
         <div className="col-4">
           <h5>55kg</h5>
           <p>Weight</p>
@@ -32,7 +32,7 @@ const Sidebar = (props) => {
 
       <div className="mt-4">
         <h5>Add A Break</h5>
-        <div className="row bg-secondary rounded">
+        <div className="row bg-info rounded">
           {breakTime.map((item) => (
             <div className="col-2 p-2">
               <div className=" rounded-circle text-center fw-bold">
@@ -42,6 +42,20 @@ const Sidebar = (props) => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="mt-4">
+        <h5>Study Details</h5>
+        <div className="row bg-info rounded">
+          <div className="col-12 row">
+            <div className="col-6">Study time:</div>
+            <div className="col-6 text-muted">200 minutes</div>
+          </div>
+          <div className="col-12 row">
+            <div className="col-6">Break time:</div>
+            <div className="col-6 text-muted">200 minutes</div>
+          </div>
         </div>
       </div>
     </div>
