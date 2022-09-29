@@ -1,6 +1,5 @@
 const BreakTime = (props) => {
   const { breakTime } = props;
-  console.log(props);
   return (
     <div className="col-2 p-2">
       <div className=" rounded-circle text-center fw-bold">

@@ -45,6 +45,7 @@ const Sidebar = (props) => {
         <div className="row bg-info rounded">
           {_breakTime.map((item) => (
             <BreakTime
+              key={item}
               breakTime={item}
               handleBreakTime={handleBreakTime}
             ></BreakTime>
