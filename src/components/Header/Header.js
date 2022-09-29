@@ -6,7 +6,7 @@ const Header = () => {
       <div className="container-fluid">
         <a className="navbar-brand fw-bolder" href="#study">
           <img src={logo} height={60} width={60} alt="" />
-          Activity-For-Study
+          <span className="px-5">Activity-For-Study</span>
         </a>
       </div>
     </nav>

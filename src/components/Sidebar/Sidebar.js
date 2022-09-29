@@ -61,13 +61,13 @@ const Sidebar = (props) => {
             </div>
           </div>
         </div>
-        <div className="row sidebar-content-bg rounded text-white">
+        <div className="row sidebar-content-bg mt-4 rounded text-white">
           <div className="col-4">
             <h5>55kg</h5>
             <p>Weight</p>
           </div>
           <div className="col-4 ">
-            <h5>5'4"</h5>
+            <h5>5'2"</h5>
             <p>Height</p>
           </div>
           <div className="col-4 ">
@@ -76,9 +76,9 @@ const Sidebar = (props) => {
           </div>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-5">
           <h5>Add A Break</h5>
-          <div className="row sidebar-content-bg rounded">
+          <div className="row sidebar-content-bg gap-2 rounded">
             {_breakTime.map((item) => (
               <BreakTime
                 key={item}
@@ -89,9 +89,9 @@ const Sidebar = (props) => {
           </div>
         </div>
 
-        <div className="mt-4">
+        <div className="mt-5">
           <h5>Study Details</h5>
-          <div className="row sidebar-content-bg rounded">
+          <div className="row sidebar-content-bg text-white rounded">
             <div className="col-12 row">
               <div className="col-6">Study time:</div>
               <div className="col-6 ">{StudyTime} minutes</div>
@@ -104,9 +104,9 @@ const Sidebar = (props) => {
         </div>
 
         <div className="mt-4">
-          <div className="card-footer bg-transparent  border-0">
-            <a
-              className="btn w-100 btn align-self-end btn-warning"
+          <div class=" card-footer bg-transparent  border-0 d-grid gap-2">
+            <button
+              className="btn w-100 btn align-self-end btn-lg btn-warning"
               onClick={notify}
             >
               <ToastContainer
@@ -121,7 +121,7 @@ const Sidebar = (props) => {
                 pauseOnHover
               />
               Activity Completed
-            </a>
+            </button>
           </div>
         </div>
       </div>

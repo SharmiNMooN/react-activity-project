@@ -6,7 +6,7 @@ const Home = ({ setStudyTime }) => {
   };
   return (
     <div className="container">
-      <div className="row">
+      <div className="row gap-4 justify-content-center">
         {studyData.map((data) => (
           <Content
             key={data.id}
