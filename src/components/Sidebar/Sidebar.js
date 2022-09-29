@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import logo from "../../images/logo.jpeg";
 import BreakTime from "../BreakTime/BreakTime";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Sidebar = (props) => {
   console.log(`props--`, props);
   const _breakTime = [10, 20, 30, 40, 50];
@@ -18,9 +21,23 @@ const Sidebar = (props) => {
     StudyTime = Number(_studyTime) + props.studyTime;
   }
 
+  const notify = () => {
+    console.log("------");
+    toast("🎉 Congrats!! You have completed your study!!", {
+      position: "top-center",
+      autoClose: 7000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
   const handleBreakTime = (time) => {
     setBreakTime(time);
   };
+
   return (
     <div className="card border-0 mt-2">
       <div className="row">
@@ -73,6 +90,28 @@ const Sidebar = (props) => {
             <div className="col-6">Break time:</div>
             <div className="col-6 text-muted">{breakTime} minutes</div>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-4">
+        <div className="card-footer bg-transparent  border-0">
+          <a
+            className="btn w-100 btn align-self-end btn-primary"
+            onClick={notify}
+          >
+            <ToastContainer
+              position="top-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+            Activity Completed
+          </a>
         </div>
       </div>
     </div>
