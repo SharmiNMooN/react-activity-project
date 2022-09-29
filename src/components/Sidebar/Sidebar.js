@@ -14,6 +14,20 @@ const Sidebar = (props) => {
           </div>
         </div>
       </div>
+      <div className="row bg-secondary rounded text-white">
+        <div className="col-4">
+          <h5>55kg</h5>
+          <p>Weight</p>
+        </div>
+        <div className="col-4 ">
+          <h5>5'4"</h5>
+          <p>Height</p>
+        </div>
+        <div className="col-4 ">
+          <h5>Dhaka</h5>
+          <p>Division</p>
+        </div>
+      </div>
     </div>
   );
 };
