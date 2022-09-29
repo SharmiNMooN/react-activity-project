@@ -6,7 +6,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Sidebar = (props) => {
-  console.log(`props--`, props);
   const _breakTime = [10, 20, 30, 40, 50];
   const [breakTime, setBreakTime] = useState(0);
   let StudyTime = 0;
@@ -22,7 +21,6 @@ const Sidebar = (props) => {
   }
 
   const notify = () => {
-    console.log("------");
     toast("🎉 Congrats!! You have completed your study!!", {
       position: "top-center",
       autoClose: 7000,
@@ -34,7 +32,15 @@ const Sidebar = (props) => {
     });
   };
 
+  useEffect(() => {
+    const bTime = localStorage.getItem("breakTime");
+    if (bTime) {
+      setBreakTime(bTime);
+    }
+  }, []);
+
   const handleBreakTime = (time) => {
+    localStorage.setItem("breakTime", time);
     setBreakTime(time);
   };
 
