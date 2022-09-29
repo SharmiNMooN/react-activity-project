@@ -1,6 +1,7 @@
 import logo from "../../images/logo.jpeg";
 
 const Sidebar = (props) => {
+  const breakTime = [10, 20, 30, 40, 50];
   return (
     <div className="card border-0 mt-2">
       <div className="row">
@@ -26,6 +27,21 @@ const Sidebar = (props) => {
         <div className="col-4 ">
           <h5>Dhaka</h5>
           <p>Division</p>
+        </div>
+      </div>
+
+      <div className="mt-4">
+        <h5>Add A Break</h5>
+        <div className="row bg-secondary rounded">
+          {breakTime.map((item) => (
+            <div className="col-2 p-2">
+              <div className=" rounded-circle text-center fw-bold">
+                <a className="btn btn-rounded rounded-circle text-center bg-white">
+                  {item}m
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
