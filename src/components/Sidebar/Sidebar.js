@@ -7,7 +7,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Sidebar = (props) => {
-  og(props);
   const _breakTime = [10, 20, 30, 40, 50];
   const [breakTime, setBreakTime] = useState(0);
   const [studyTime, setStudyTime] = useState(0);
