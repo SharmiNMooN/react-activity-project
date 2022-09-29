@@ -2,9 +2,9 @@ import logo from "../../images/p-logo.jpeg";
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav className="navbar navbar-expand-lg bg-secondary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#study">
+        <a className="navbar-brand fw-bolder" href="#study">
           <img src={logo} height={60} width={60} alt="" />
           Activity-For-Study
         </a>
