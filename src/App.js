@@ -15,7 +15,7 @@ function App() {
           <Home setStudyTime={setStudyTime}></Home>
         </div>
         <div className="col-sm-12 col-md-3 mt-2">
-          <Sidebar studyTime={studyTime}></Sidebar>
+          <Sidebar studyTime={studyTime} key={studyTime}></Sidebar>
         </div>
         <Questions></Questions>
       </div>

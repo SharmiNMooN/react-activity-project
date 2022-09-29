@@ -10,17 +10,15 @@ const Sidebar = (props) => {
   console.log(props);
   const _breakTime = [10, 20, 30, 40, 50];
   const [breakTime, setBreakTime] = useState(0);
-  let StudyTime = 0;
+  const [studyTime, setStudyTime] = useState(0);
+  // let StudyTime = 0;
 
   const _studyTime = localStorage.getItem("studyTime");
   console.log(_studyTime);
 
   if (!_studyTime) {
-    localStorage.setItem("studyTime", props.studyTime);
-    StudyTime = props.studyTime;
-  } else {
-    localStorage.setItem("studyTime", Number(_studyTime) + props.studyTime);
-    StudyTime = Number(_studyTime) + props.studyTime;
+    setStudyTime(props.studyTime);
+    localStorage.setItem("studyTime", studyTime);
   }
 
   const notify = () => {
@@ -36,9 +34,19 @@ const Sidebar = (props) => {
   };
 
   useEffect(() => {
+    console.log("use effect called", props);
     const bTime = localStorage.getItem("breakTime");
     if (bTime) {
       setBreakTime(bTime);
+    }
+
+    if (!_studyTime) {
+      setStudyTime(props.studyTime);
+      localStorage.setItem("studyTime", studyTime);
+    } else {
+      console.log("---xxxxxxx-", Number(_studyTime) + props.studyTime);
+      localStorage.setItem("studyTime", Number(_studyTime) + props.studyTime);
+      setStudyTime(Number(_studyTime) + props.studyTime);
     }
   }, []);
 
@@ -94,7 +102,7 @@ const Sidebar = (props) => {
           <div className="row sidebar-content-bg text-white rounded">
             <div className="col-12 row">
               <div className="col-6">Study time:</div>
-              <div className="col-6 ">{StudyTime} minutes</div>
+              <div className="col-6 ">{studyTime} minutes</div>
             </div>
             <div className="col-12 row">
               <div className="col-6">Break time:</div>
@@ -104,7 +112,7 @@ const Sidebar = (props) => {
         </div>
 
         <div className="mt-4">
-          <div class=" card-footer bg-transparent  border-0 d-grid gap-2">
+          <div className="card-footer bg-transparent  border-0 d-grid gap-2">
             <button
               className="btn w-100 btn align-self-end btn-lg btn-warning"
               onClick={notify}
