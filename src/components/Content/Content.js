@@ -2,7 +2,7 @@ const Content = (props) => {
   const { data } = props;
 
   return (
-    <div className="card col-xs-12 col-sm-12 col-md-3 mt-2  p-2">
+    <div className="card col-xs-12 col-sm-12 col-md-4 col-xl-3  mt-2  p-2">
       <div className="p-4">
         <img src={data.img} height={100} className="card-img-top" alt="" />
         <div className="card-body">
