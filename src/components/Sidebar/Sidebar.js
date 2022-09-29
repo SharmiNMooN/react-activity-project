@@ -1,7 +1,17 @@
+import { useState } from "react";
 import logo from "../../images/logo.jpeg";
+import BreakTime from "../BreakTime/BreakTime";
 
 const Sidebar = (props) => {
-  const breakTime = [10, 20, 30, 40, 50];
+  const _breakTime = [10, 20, 30, 40, 50];
+
+  const { studyTime } = props;
+
+  const [breakTime, setBreakTime] = useState(0);
+
+  const handleBreakTime = (time) => {
+    setBreakTime(time);
+  };
   return (
     <div className="card border-0 mt-2">
       <div className="row">
@@ -33,14 +43,11 @@ const Sidebar = (props) => {
       <div className="mt-4">
         <h5>Add A Break</h5>
         <div className="row bg-info rounded">
-          {breakTime.map((item) => (
-            <div className="col-2 p-2">
-              <div className=" rounded-circle text-center fw-bold">
-                <a className="btn btn-rounded rounded-circle text-center bg-white">
-                  {item}m
-                </a>
-              </div>
-            </div>
+          {_breakTime.map((item) => (
+            <BreakTime
+              breakTime={item}
+              handleBreakTime={handleBreakTime}
+            ></BreakTime>
           ))}
         </div>
       </div>
@@ -54,7 +61,7 @@ const Sidebar = (props) => {
           </div>
           <div className="col-12 row">
             <div className="col-6">Break time:</div>
-            <div className="col-6 text-muted">200 minutes</div>
+            <div className="col-6 text-muted">{breakTime} minutes</div>
           </div>
         </div>
       </div>
