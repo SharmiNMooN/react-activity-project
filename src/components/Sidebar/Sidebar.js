@@ -7,14 +7,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Sidebar = (props) => {
-  console.log(props);
+  og(props);
   const _breakTime = [10, 20, 30, 40, 50];
   const [breakTime, setBreakTime] = useState(0);
   const [studyTime, setStudyTime] = useState(0);
-  // let StudyTime = 0;
 
   const _studyTime = localStorage.getItem("studyTime");
-  console.log(_studyTime);
 
   if (!_studyTime) {
     setStudyTime(props.studyTime);
@@ -34,7 +32,6 @@ const Sidebar = (props) => {
   };
 
   useEffect(() => {
-    console.log("use effect called", props);
     const bTime = localStorage.getItem("breakTime");
     if (bTime) {
       setBreakTime(bTime);
@@ -44,7 +41,6 @@ const Sidebar = (props) => {
       setStudyTime(props.studyTime);
       localStorage.setItem("studyTime", studyTime);
     } else {
-      console.log("---xxxxxxx-", Number(_studyTime) + props.studyTime);
       localStorage.setItem("studyTime", Number(_studyTime) + props.studyTime);
       setStudyTime(Number(_studyTime) + props.studyTime);
     }
