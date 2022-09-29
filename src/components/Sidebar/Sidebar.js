@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import logo from "../../images/logo.jpeg";
 import BreakTime from "../BreakTime/BreakTime";
 
+import "./Sidebar.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -57,7 +58,7 @@ const Sidebar = (props) => {
           </div>
         </div>
       </div>
-      <div className="row bg-info rounded text-white">
+      <div className="row sidebar-content-bg rounded text-white">
         <div className="col-4">
           <h5>55kg</h5>
           <p>Weight</p>
@@ -74,7 +75,7 @@ const Sidebar = (props) => {
 
       <div className="mt-4">
         <h5>Add A Break</h5>
-        <div className="row bg-info rounded">
+        <div className="row sidebar-content-bg rounded">
           {_breakTime.map((item) => (
             <BreakTime
               key={item}
@@ -87,14 +88,14 @@ const Sidebar = (props) => {
 
       <div className="mt-4">
         <h5>Study Details</h5>
-        <div className="row bg-info rounded">
+        <div className="row sidebar-content-bg rounded">
           <div className="col-12 row">
             <div className="col-6">Study time:</div>
-            <div className="col-6 text-muted">{StudyTime} minutes</div>
+            <div className="col-6 ">{StudyTime} minutes</div>
           </div>
           <div className="col-12 row">
             <div className="col-6">Break time:</div>
-            <div className="col-6 text-muted">{breakTime} minutes</div>
+            <div className="col-6 ">{breakTime} minutes</div>
           </div>
         </div>
       </div>
@@ -102,7 +103,7 @@ const Sidebar = (props) => {
       <div className="mt-4">
         <div className="card-footer bg-transparent  border-0">
           <a
-            className="btn w-100 btn align-self-end btn-primary"
+            className="btn w-100 btn align-self-end btn-warning"
             onClick={notify}
           >
             <ToastContainer
