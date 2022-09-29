@@ -10,10 +10,10 @@ function App() {
     <div>
       <Header></Header>
       <div className="row">
-        <div className="col col-9 bg-light">
+        <div className="col-md-9 col-sm-12 bg-light mt-2">
           <Home setStudyTime={setStudyTime}></Home>
         </div>
-        <div className="col col-3">
+        <div className="col-sm-12 col-md-3 mt-2">
           <Sidebar studyTime={studyTime}></Sidebar>
         </div>
       </div>
